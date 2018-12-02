@@ -1,12 +1,14 @@
-class MrMeeseeksBox {
+const importModules = require('./MrMeeseeks');
+
+class MrMeeseeksSingletonBox {
     constructor(BoxName) {
-        MrMeeseeksBox.box = createBox(BoxName);
+        MrMeeseeksSingletonBox.box = createBox(BoxName);
     }
     getBox() {
-        return MrMeeseeksBox.box;
+        return MrMeeseeksSingletonBox.box;
     }
     getBoxName() {
-        return MrMeeseeksBox.box.name;
+        return MrMeeseeksSingletonBox.box.name;
     }
 }
 
@@ -21,10 +23,16 @@ function createBox(BoxName) {
 }
 
 var box = {
-
+    reality: [],
+    pressButton: function () {
+        this.reality.push(new importModules.MrMeeseeks())
+    },
+    howManyMeeseeksAreCreated: function() {
+        return this.reality.length;
+    }
 };
 
 
 module.exports = {
-    MrMeeseeks: MrMeeseeksBox,
+    MrMeeseeksBox: MrMeeseeksSingletonBox,
 };
