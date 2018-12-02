@@ -10,3 +10,5 @@ MrMeeseeksBox1.getBox().pressButton();
 MrMeeseeksBox1.getBox().pressButton();
 
 console.assert(MrMeeseeksBox1.getBox().howManyMeeseeksAreCreated() === 3);
+
+console.assert(MrMeeseeksBox2.getBox().howManyMeeseeksAreCreated() === 3);

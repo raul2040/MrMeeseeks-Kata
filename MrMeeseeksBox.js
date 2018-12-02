@@ -25,7 +25,8 @@ function createBox(BoxName) {
 var box = {
     reality: [],
     pressButton: function () {
-        this.reality.push(new importModules.MrMeeseeks())
+        this.reality.push(new importModules.MrMeeseeks(this.howManyMeeseeksAreCreated()));
+        this.reality[this.howManyMeeseeksAreCreated() - 1].salutation();
     },
     howManyMeeseeksAreCreated: function() {
         return this.reality.length;
