@@ -1,3 +1,6 @@
-const MrMeeseeks = require('./MrMeeseeks');
+const MrMeeseeksBox = require('./MrMeeseeksBox');
 
-console.log(MrMeeseeks.MrMeeseeks.getBox().name("MrMeeseeks"));
+var MrMeeseeksBox1 = new MrMeeseeksBox.MrMeeseeks("FirstBox");
+var MrMeeseeksBox2 = new MrMeeseeksBox.MrMeeseeks("SameBoxWithDifferentName");
+
+console.assert(MrMeeseeksBox1.getBoxName() === "SameBoxWithDifferentName");
