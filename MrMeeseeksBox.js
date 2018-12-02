@@ -1,6 +1,3 @@
-const importModules = require('./MrMeeseeks');
-var events = require('events');
-
 class MrMeeseeksSingletonBox {
     constructor(BoxName) {
         MrMeeseeksSingletonBox.box = createBox(BoxName);
@@ -29,11 +26,21 @@ var box = {
         this.reality.push(new importModules.MrMeeseeks(this.howManyMeeseeksAreCreated()));
         this.reality[this.howManyMeeseeksAreCreated() - 1].salutation();
     },
-    howManyMeeseeksAreCreated: function() {
+    howManyMeeseeksAreCreated: function () {
         return this.reality.length;
     },
-    lastMeeseeksCreated: function() {
-        return this.reality[this.howManyMeeseeksAreCreated() -1]
+    lastMeeseeksCreated: function () {
+        return this.reality[this.howManyMeeseeksAreCreated() - 1]
+    },
+    killMrMeesek: function () {
+        this.reality.shift();
+        console.log("MrMeeseek exploded after do action");
+        this.reorderIds();
+    },
+    reorderIds: function() {
+        for(let x=0; x<this.reality.length; x++) {
+            this.reality[x].setId(x);
+        }
     }
 };
 

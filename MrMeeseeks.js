@@ -32,7 +32,9 @@ class MrMeeseeks {
         console.log("All Done");
         console.log("--------------------------");
         console.log(MrMeeseeks.reality);
-        this.alive = false;
+    }
+    setId(id) {
+        this.id = id;
     }
 }
 

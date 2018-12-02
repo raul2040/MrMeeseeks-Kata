@@ -27,7 +27,12 @@ var howManyMeeseeksAre = MrMeeseeksBox1.getBox().howManyMeeseeksAreCreated();
 
 console.log(MrMeeseeksBox1.getBox().lastMeeseeksCreated().makeRequest("Open Jerry's stupid mayonnaise jar."));
 console.log("--------------------------");
-
+console.log(MrMeeseeksBox1.getBox().killMrMeesek());
+console.log("--------------------------");
 var howManyMeeseeksAreNow = MrMeeseeksBox1.getBox().howManyMeeseeksAreCreated();
 
-console.assert(howManyMeeseeksAre === howManyMeeseeksAreNow);
+console.assert(howManyMeeseeksAre !== howManyMeeseeksAreNow);
+
+
+console.assert(MrMeeseeksBox1.getBox().reality[1].id === 1);
+console.assert(MrMeeseeksBox1.getBox().reality[2].id === 2);
