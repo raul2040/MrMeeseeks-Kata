@@ -1,6 +1,6 @@
 class MrMeeseeks {
     constructor(id) {
-        MrMeeseeks.id = id;
+        this.id = id;
         MrMeeseeks.salutations = [
             "Hi I'm Mr. Meeseeks look at me",
             "I'm Mr. Meeseeks",
@@ -13,6 +13,9 @@ class MrMeeseeks {
             "Oh, yeah! Yes ma'am",
             "Ooh, yeah! Can do!"
         ];
+        MrMeeseeks.done = [
+            "All Done"
+        ]
     }
     getRandomNumber () {
         return Math.floor(Math.random() * MrMeeseeks.salutations.length);
@@ -20,11 +23,16 @@ class MrMeeseeks {
     salutation() {
         console.log(MrMeeseeks.salutations[this.getRandomNumber()]);
     }
-    makeRequest(action, whoRequest) {
+    makeRequest(action) {
         console.log(MrMeeseeks.response[this.getRandomNumber()]);
+        console.log("MrMeeseeks do: " + action);
+        this.fullFillRequest();
     }
     fullFillRequest() {
-
+        console.log("All Done");
+        console.log("--------------------------");
+        console.log(MrMeeseeks.reality);
+        this.alive = false;
     }
 }
 

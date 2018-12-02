@@ -1,4 +1,5 @@
 const importModules = require('./MrMeeseeks');
+var events = require('events');
 
 class MrMeeseeksSingletonBox {
     constructor(BoxName) {
@@ -30,6 +31,9 @@ var box = {
     },
     howManyMeeseeksAreCreated: function() {
         return this.reality.length;
+    },
+    lastMeeseeksCreated: function() {
+        return this.reality[this.howManyMeeseeksAreCreated() -1]
     }
 };
 
